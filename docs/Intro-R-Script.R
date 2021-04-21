@@ -1,30 +1,30 @@
 # Introdução ao R
 # Núcleo de Estudos em Desenvolvimento Urbano e Regional - NEDUR
 # Prof. Vinicius A. Vale
-# Julho, 2020
+# Abril, 2021
 
 {
   # 1. Introdução
   # O curso Introdução ao R tem como objetivo apresentar os elementos básicos
-  # do sofware R e do RStudio, incluindo linguagem, operações básicas,
+  # do software R e do RStudio, incluindo linguagem, operações básicas,
   # criação de objetos, importação e exportação de dados, manipulação de
   # dados e visualização.
   
   # Mais detalhes em http://www.nedur.ufpr.br/portal/cursos/
   
-} #  1. Introdução
+} # 1. Introdução
 {
   # 2. R e RStudio
   # Links:
   # https://cloud.r-project.org/
   # https://rstudio.com/products/rstudio/download/
   
-} #  2. R e RStudio
+} # 2. R e RStudio
 {
   # 3. Links úteis
   # Acesse o material em http://www.nedur.ufpr.br/portal/cursos/
   
-} #  3. Links úteis
+} # 3. Links úteis
 {
   # 4. Passos iniciais
   
@@ -45,7 +45,7 @@
   # Limpar o Environment
   rm(list = ls())
   
-} #  4. Passos iniciais
+} # 4. Passos iniciais
 {
   # 5. Packages
   
@@ -59,7 +59,7 @@
   library(dplyr)
   library(tidyverse)
   
-} #  5. Packages
+} # 5. Packages
 {
   # 6. Ajuda
   # Ajuda (help R) e exemplos
@@ -67,12 +67,12 @@
   ?dplyr
   example(sum)
   
-} #  6. Ajuda
+} # 6. Ajuda
 {
   # 7. Operações básicas
   
   {
-    # 7.1 Operadores aritiméticos
+    # 7.1 Operadores aritméticos
     ?Arithmetic
     2 + 2
     4 - 2
@@ -82,7 +82,7 @@
     4 ** 2
     5 %/% 2
     
-  } # 7.1. Operadores aritiméticos
+  } # 7.1. Operadores aritméticos
   {
     # 7.2. Operadores lógicos
     ?Logic
@@ -99,49 +99,49 @@
     
   } # 7.2. Operadores lógicos
   
-} #  7. Operações básicas
+} # 7. Operações básicas
 {
   # 8. Objetos e classes
   # Acesse o material em http://www.nedur.ufpr.br/portal/cursos/
   
-} #  8. Objetos e classes
+} # 8. Objetos e classes
 {
   # 9. Variáveis
-  x = 5
-  y = x + 1
-  y
-  z = 2 * x
-  z
   x <- 5
   y <- x + 1
+  y
+  z <- 2 * x
+  z
+  x = 5
+  y = x + 1
   y
   
   # Remover variáveis do Environment
   rm(y)
   rm(list = ls())
   
-} #  9. Variáveis
+} # 9. Variáveis
 {
   # 10. Vetores
   
   {
     # 10.1 Criação de vetores
-    x = c(1, 5, 6)
+    x <- c(1, 5, 6)
     x
     View(x)
     class(x)
-    y = c("NEDUR", "UFPR", "Regional", "Urbana")
+    y <- c("NEDUR", "UFPR", "Regional", "Urbana")
     View(y)
     class(y)
-    v = c(TRUE, FALSE, TRUE)
+    v <- c(TRUE, FALSE, TRUE)
     v
     class(v)
-    g = c("NEDUR", TRUE, 10)
+    g <- c("NEDUR", TRUE, 10)
     g
     class(g)
-    r = c(1:5)
+    r <- c(1:5)
     r
-    q = seq(2, 4, by = 0.5)
+    q <- seq(2, 4, by = 0.5)
     q
     seq(1, 9, by = 2)
     seq(1, 10, by = 1)
@@ -152,12 +152,12 @@
     seq(0, 1, length = 3)
     seq(0, 1, length = 4)
     seq(0, 1, length = 5)
-    w = rep(5, times = 3)
+    w <- rep(5, times = 3)
     w
     replicate(5, 3)
     ?rep
     ?replicate
-    e = rep("NEDUR", times = 3)
+    e <- rep("NEDUR", times = 3)
     e
     rep(1:2, times = 3)
     rep(1:2, each = 3)
@@ -168,15 +168,15 @@
   } # 10.1. Criação de vetores
   {
     # 10.2. #Indexação de vetores
-    g = c(1, 5, "NEDUR", 2, 6)
+    g <- c(1, 5, "NEDUR", 2, 6)
     g[3]
     g[2:4]
     g[-3]
     g[-(2:4)]
     g[c(1, 5)]
-    n = g[c(1, 5)]
+    n <- g[c(1, 5)]
     n
-    v = c(1, 2, 2, 4, 5)
+    v <- c(1, 2, 2, 4, 5)
     v[v == 2]
     v[v < 4]
     v[v %in% c(1, 2)]
@@ -187,14 +187,14 @@
   } # 10.2. Indexação de vetores
   {
     # 10.3. Operações com vetores
-    k = c(2, 4, 6, 8, 10)
+    k <- c(2, 4, 6, 8, 10)
     k
     k * 2
     k / 2
     k + 1
     k - 1
-    s = c(1, 2, 3, 4, 5)
-    b = k + s
+    s <- c(1, 2, 3, 4, 5)
+    b <- k + s
     b
     b >= 9
     b[b >= 9]
@@ -210,7 +210,7 @@
     # Limpar o Environment
     rm(list = ls())
     
-    x = c(2, 4, 6, 8, 10)
+    x <- c(2, 4, 6, 8, 10)
     sum(x)
     mean(x)
     range(x)
@@ -219,23 +219,23 @@
   } # 10.4. Funções com vetores
   {
     # 10.5 Outras funções
-    g = c(5, 2, 2, 1, 10)
+    g <- c(5, 2, 2, 1, 10)
     sort(g)
     sort(g, decreasing = TRUE)
     ?sort
     table(g)
     unique(g)
-    w = unique(g)
+    w <- unique(g)
     order(g)
     length(g)
     cumsum(g)
     is.na(g)
-    dia = c(01, 14, 30)
-    mes = c("jan", "mai", "dez")
-    ano = c(1980, 1990, 2020)
+    dia <- c(01, 14, 30)
+    mes <- c("jan", "mai", "dez")
+    ano <- c(1980, 1990, 2020)
     paste(dia)
     as.character(dia)
-    data = paste(dia, mes, ano)
+    data <- paste(dia, mes, ano)
     data
     
     # Limpar o Environment
@@ -250,31 +250,31 @@
   {
     # 11.1. Criação de matrizes
     ?matrix
-    V = matrix(1, ncol = 10, nrow = 10)
+    V <- matrix(1, ncol = 10, nrow = 10)
     V
-    C = matrix(data = seq(1, 100),
+    C <- matrix(data = seq(1, 100),
                ncol = 10,
                nrow = 10)
     C
-    C = matrix(seq(1, 100), ncol = 10, nrow = 10)
+    C <- matrix(seq(1, 100), ncol = 10, nrow = 10)
     C
 
-    L = matrix(seq(1, 100),
+    L <- matrix(seq(1, 100),
                ncol = 10,
                nrow = 10,
                byrow = TRUE)
     L
-    c1 = c(-1, 4)
-    c2 = c(3, 2)
+    c1 <- c(-1, 4)
+    c2 <- c(3, 2)
     c1
     c2
-    X = cbind(c1, c2)
+    X <- cbind(c1, c2)
     X
-    X = cbind(c(-1, 4), c(3, 2))
-    X = matrix(c(-1, 4, 3, 2), nrow = 2, ncol = 2)
-    X = rbind(c1, c2)
+    X <- cbind(c(-1, 4), c(3, 2))
+    X <- matrix(c(-1, 4, 3, 2), nrow = 2, ncol = 2)
+    X <- rbind(c1, c2)
 
-    N = matrix(sample(c("NEDUR", "UFPR"), 25, replace = TRUE),
+    N <- matrix(sample(c("NEDUR", "UFPR"), 25, replace = TRUE),
                ncol = 5,
                nrow = 5)
     N
@@ -286,14 +286,14 @@
     C
     C[1, 2]
     C[3,]
-    C[2:4,]
+    C[2:4, ]
     C[, 1]
     C[, 1:3]
     C[-1,-1]
     C[,-c(2:10)]
     
     
-  } # 11.2. Idexação de matrizes
+  } # 11.2. Indexação de matrizes
   {
     # 11.3. Operação de matrizes
     C
@@ -321,9 +321,9 @@
     # Limpar o Environment
     rm(list = ls())
     
-    X = cbind(c(-1, 4), c(3, 2))
+    X <- cbind(c(-1, 4), c(3, 2))
     X
-    Y = cbind(c(1, 3), c(2, 4))
+    Y <- cbind(c(1, 3), c(2, 4))
     Y
     X + Y
     X - Y
@@ -357,7 +357,7 @@
     wage1
     install.packages("tibble")
     library(tibble)
-    wage1tib = as_tibble(wage1)
+    wage1tib = as.tibble(wage1)
     class(wage1tib)
     View(wage1tib)
     wage1tib
@@ -379,12 +379,12 @@
   } # 12.2. Manipulando data frames
   {
     # 12.3. Transformando variáveis
-    wage1$wage2x = wage1$wage * 2
+    wage1$wage2x <- wage1$wage * 2
     
     # Limpar o Environment
     rm(list = ls())
     
-  } # 12.3. Transformanfo variáveis
+  } # 12.3. Transformando variáveis
   
 } # 12. Data frames e tibbles
 {
@@ -392,27 +392,27 @@
   
   {
     # 13.1. Arquivos CSV
-    # Dados: https://1drv.ms/u/s!AjJAA9BXdL6ph5NVtpIxvSzIWE2Q-Q?e=NIqNEw
+    # Dados: https://viniciusvale.github.io/IntroR/EXP_2019.rar
     install.packages("readr")
     library(readr)
-    dexp = read_csv2("EXP_2019.csv")
+    dexp <- read_csv2("EXP_2019.csv")
     
     
   } # 13.1. Arquivos CSV
   {
     # 13.2. Arquivos XLS E XLSX
-    # Dados: https://1drv.ms/x/s!AjJAA9BXdL6ph4Fxm90PAujA6aqyBg?e=wu18Jl
+    # Dados: http://viniciusvale.github.io/IntroR/EXP2019_ComexStat.xlsx
     install.packages("readxl")
     library(readxl)
-    dados = read_excel("EXP2019_ComexStat.xlsx")
+    dados <- read_excel("EXP2019_ComexStat.xlsx")
     install.packages("xlsx")
     library(xlsx)
-    dados = read.xlsx(file = "EXP2019_ComexStat.xlsx", sheetName = "2019")
+    dados <- read.xlsx(file = "EXP2019_ComexStat.xlsx", sheetName = "2019")
     install.packages("openxlsx")
     library(openxlsx)
-    dados = read.xlsx(xlsxFile = "EXP2019_ComexStat.xlsx", sheet = "2019")
-    dados = xlsx::read.xlsx(file = "EXP2019_ComexStat.xlsx", sheetName = "2019")
-    dados = openxlsx::read.xlsx(xlsxFile = "EXP2019_ComexStat.xlsx", sheet = "2019")
+    dados <- read.xlsx(xlsxFile = "EXP2019_ComexStat.xlsx", sheet = "2019")
+    dados <- xlsx::read.xlsx(file = "EXP2019_ComexStat.xlsx", sheetName = "2019")
+    dados <- openxlsx::read.xlsx(xlsxFile = "EXP2019_ComexStat.xlsx", sheet = "2019")
     
     # Limpar o Environment
     rm(list = ls()[!ls() %in% c("dexp")])
@@ -429,9 +429,9 @@
   library(tidyr)
   names(dexp)
   
-  dexp_mod = select(dexp, c("CO_ANO", "CO_MES", "SG_UF_NCM", "VL_FOB"))
+  dexp_mod <- select(dexp, c("CO_ANO", "CO_MES", "SG_UF_NCM", "VL_FOB"))
   
-  dexp_mod = rename(
+  dexp_mod <- rename(
     dexp_mod,
     ano = CO_ANO,
     mes = CO_MES,
@@ -439,17 +439,17 @@
     exp = VL_FOB
   )
   
-  dexp_mod = mutate(dexp_mod, log_exp = log(exp))
+  dexp_mod <- mutate(dexp_mod, log_exp = log(exp))
   
-  dexp_mod = mutate(dexp_mod, exp = exp / 1000000000)
+  dexp_mod <- mutate(dexp_mod, exp = exp / 1000000000)
   
-  dexp_mod = group_by(dexp_mod, ano, uf)
+  dexp_mod <- group_by(dexp_mod, ano, uf)
   
-  dexp_mod = summarise(dexp_mod, exp = sum(exp))
+  dexp_mod <- summarise(dexp_mod, exp = sum(exp))
   
-  dexp_pr = filter(dexp_mod, uf == "PR")
+  dexp_pr <- filter(dexp_mod, uf == "PR")
   
-  dexp_mod2 = dexp %>% select("CO_ANO", "CO_MES", "SG_UF_NCM", "VL_FOB") %>%
+  dexp_mod2 <- dexp %>% select("CO_ANO", "CO_MES", "SG_UF_NCM", "VL_FOB") %>%
     rename(
       ano = CO_ANO,
       mes = CO_MES,
@@ -461,7 +461,7 @@
     group_by(ano, uf) %>%
     summarise(exp = sum(exp))
   
-  dexp_pr2 = dexp %>% select("CO_ANO", "CO_MES", "SG_UF_NCM", "VL_FOB") %>%
+  dexp_pr2 <- dexp %>% select("CO_ANO", "CO_MES", "SG_UF_NCM", "VL_FOB") %>%
     rename(
       ano = CO_ANO,
       mes = CO_MES,
@@ -501,7 +501,7 @@
   {
     # 15.3. Salvar objetos do R
     saveRDS(dexp_mod, file = "Exp_UF_2019.rds")
-    dexp_mod2 = readRDS(file = "Exp_UF_2019.rds")
+    dexp_mod2 <- readRDS(file = "Exp_UF_2019.rds")
     save(dexp, dexp_mod, dexp_pr, file = "Exp.RData")
     rm(list = ls())
     load("Exp.RData")
@@ -550,13 +550,13 @@
   
   load("Exp.RData")
   
-  shapeUF = read_state()
+  shapeUF <- read_state()
   
   class(shapeUF)
   
   View(shapeUF)
   
-  expuf = left_join(shapeUF, dexp_mod, by = c("abbrev_state" = "uf"))
+  expuf <- left_join(shapeUF, dexp_mod, by = c("abbrev_state" = "uf"))
   
   ggplot() +
     geom_sf(data = expuf,
