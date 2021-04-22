@@ -357,7 +357,7 @@
     wage1
     install.packages("tibble")
     library(tibble)
-    wage1tib = as.tibble(wage1)
+    wage1tib <- as.tibble(wage1)
     class(wage1tib)
     View(wage1tib)
     wage1tib
@@ -516,10 +516,10 @@
   load("Exp.RData")
   
   ggplot(data = dexp_mod, aes(uf, exp)) +
-    geom_col (fill = "blue")
+    geom_col(fill = "blue")
   
   ggplot(data = dexp_mod, aes(uf, exp)) +
-    geom_col (fill = "blue") +
+    geom_col(fill = "blue") +
     xlab("Unidades da Federação") +
     ylab("Valor FOB em bilhões US$") +
     ggtitle("Exportações") +
@@ -528,14 +528,15 @@
     theme(plot.subtitle = element_text(hjust = 0.5))
   
   ggplot(data = dexp_mod, aes(uf, exp)) +
-    geom_col (fill = "blue") +
+    geom_col(fill = "blue") +
+    theme_minimal() +
     xlab("Unidades da Federação") +
     ylab("Valor FOB em bilhões US$") +
     ggtitle("Exportações") +
     labs(subtitle = "2019") +
     theme(plot.title = element_text(hjust = 0.5)) +
-    theme(plot.subtitle = element_text(hjust = 0.5)) +
-    theme_minimal()
+    theme(plot.subtitle = element_text(hjust = 0.5))
+    
   
 } # 16. Gráficos
 {
@@ -563,37 +564,38 @@
             aes(fill = exp),
             color = "white",
             size = .15) +
-    labs(title = "Exportações",
-         subtitle = "2019",
-         caption = "Fonte: Elaboração própria.") +
-    scale_fill_distiller(palette = "Reds", name = "Valor FOB Bilhões US$") +
-    theme_minimal()
-  
-  ggplot() +
-    geom_sf(data = expuf,
-            aes(fill = exp),
-            color = "white",
-            size = .15) +
-    labs(title = "Exportações",
-         subtitle = "2019",
-         caption = "Fonte: Elaboração própria.") +
-    scale_fill_distiller(palette = "Reds",
-                         trans = "reverse",
-                         name = "Valor FOB Bilhões US$") +
-    theme_minimal()
-  
-  ggplot() +
-    geom_sf(data = expuf,
-            aes(fill = exp),
-            color = "white",
-            size = .15) +
-    labs(title = "Exportações",
-         subtitle = "2019",
-         caption = "Fonte: Elaboração própria.") +
-    scale_fill_distiller(palette = "Reds",
-                         trans = "reverse",
-                         name = "Valor FOB Bilhões US$") +
     theme_minimal() +
+    labs(title = "Exportações",
+         subtitle = "2019",
+         caption = "Fonte: Elaboração própria.") +
+    scale_fill_distiller(palette = "Reds", name = "Valor FOB Bilhões US$")
+    
+  
+  ggplot() +
+    geom_sf(data = expuf,
+            aes(fill = exp),
+            color = "white",
+            size = .15) +
+    theme_minimal() +
+    labs(title = "Exportações",
+         subtitle = "2019",
+         caption = "Fonte: Elaboração própria.") +
+    scale_fill_distiller(palette = "Reds",
+                         trans = "reverse",
+                         name = "Valor FOB Bilhões US$")
+  
+  ggplot() +
+    geom_sf(data = expuf,
+            aes(fill = exp),
+            color = "white",
+            size = .15) +
+    theme_minimal() +
+    labs(title = "Exportações",
+         subtitle = "2019",
+         caption = "Fonte: Elaboração própria.") +
+    scale_fill_distiller(palette = "Reds",
+                         trans = "reverse",
+                         name = "Valor FOB Bilhões US$") +
     theme(
       axis.text.x = element_blank(),
       axis.text.y = element_blank(),
