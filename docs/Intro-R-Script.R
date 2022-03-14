@@ -1,7 +1,7 @@
 # Introdução ao R
 # Núcleo de Estudos em Desenvolvimento Urbano e Regional - NEDUR
-# Prof. Vinicius A. Vale
-# Abril, 2021
+# Prof. Vinicius A. Vale, Tania M. Alberti & Davi W. Catelan
+# Março, 2022
 
 {
   # 1. Introdução
@@ -357,7 +357,7 @@
     wage1
     install.packages("tibble")
     library(tibble)
-    wage1tib <- as.tibble(wage1)
+    wage1tib <- as_tibble(wage1)
     class(wage1tib)
     View(wage1tib)
     wage1tib
@@ -541,7 +541,18 @@
 } # 16. Gráficos
 {
   # 17. Mapas
-  install.packages("geobr")
+  
+  ## ERROR ##
+  # install.packages("geobr")
+  # Warning in install.packages :
+  # package ‘geobr’ is not available for this version of R
+  # Package ‘geobr’ was removed from the CRAN repository.
+  
+  # devtools: Tools to Make Developing R Packages Easier
+  install.packages("devtools")
+  
+  devtools::install_github("ipeaGIT/geobr", subdir = "r-package")
+  
   library(geobr)
   install.packages("sf")
   library(sf)
@@ -606,3 +617,5 @@
 
 # Comentários ou Sugestões
 # vinicius.a.vale@gmail.com | viniciusvale@ufpr.br
+# taniamoreiraalberti@gmail.com
+# daviwindercatelan.ecae@gmail.com
